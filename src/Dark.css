@@ -1,0 +1,38 @@
+    .dark-mode .bg{
+        background-color: #22313f;
+    }
+  .dark-mode .App{
+    background-color: #22313f;
+    color: #5a86e6;
+    border: 2px solid #5a86e6;
+  }
+  .dark-mode .button {
+    border: 1px solid #5a86e6;
+    background-color: #22313f;
+    color: #5a86e6;
+  }
+  
+  .dark-mode .button:hover {
+    background-color: #0c1116;
+  }
+  .dark-mode .score{
+    border: 2px solid #5a86e6;
+  }
+  .dark-mode #toggle {
+    background-color: #22313f;
+    border: 2px solid #5a86e6;
+    
+  }
+  
+  .dark-mode #toggle .toggle-inner {
+    background-color: #5a86e6;
+  }
+  .dark-mode .button2 {
+    border: 1px solid #5a86e6;
+    background-color: #22313f;
+    color: #5a86e6;
+  }
+  
+  .dark-mode .button2:hover {
+    background-color: #0c1116;
+  }
