@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import "./Dark.css"
-
+import paper from './images/paper.png'
+import rock from './images/rock.png'
+import scissors from './images/scissors.png'
 function App() {
   const [userChoice, setUserChoice] = useState("rock");
   const [computerChoice, setComputerChoice] = useState("rock");
@@ -41,12 +43,13 @@ function App() {
     }
   }, [darkMode]);
   useEffect(() => {
-    const comboMoves = userChoice + computerChoice;
+    const comboMoves = userChoice.toLowerCase() + computerChoice.toLowerCase();
+  
     if (userPoints <= 4 && computerPoints <= 4) {
       if (
-        comboMoves === "RockScissors" ||
-        comboMoves === "PaperRock" ||
-        comboMoves === "ScissorsPaper"
+        comboMoves === "rockscissors" ||
+        comboMoves === "paperrock" ||
+        comboMoves === "scissorspaper"
       ) {
         const updatedUserpoints = userPoints + 1;
         setUserPoints(updatedUserpoints);
@@ -57,10 +60,11 @@ function App() {
         }
       }
     }
+  
     if (
-      comboMoves === "ScissorsRock" ||
-      comboMoves === "RockPaper" ||
-      comboMoves === "PaperScissors"
+      comboMoves === "scissorsrock" ||
+      comboMoves === "rockpaper" ||
+      comboMoves === "paperscissors"
     ) {
       const updatedComputerPoints = computerPoints + 1;
       setComputerPoints(updatedComputerPoints);
@@ -70,12 +74,13 @@ function App() {
         setResult("Computer Wins");
       }
     }
+  
     if (
-      comboMoves === "RockRock" ||
-      comboMoves === "PaperPaper" ||
-      comboMoves === "ScissorsScissors"
+      comboMoves === "rockrock" ||
+      comboMoves === "paperpaper" ||
+      comboMoves === "scissorsscissors"
     ) {
-      setTurnResult("Its a Tie");
+      setTurnResult("It's a Tie");
     }
   }, [userChoice, computerChoice]);
   return (
@@ -99,17 +104,30 @@ function App() {
         <div className="choices">
           <div className="choice-user">
             <img
-              src={`../images/${userChoice}.png`}
+              src={
+                userChoice === 'Rock'
+                  ? rock
+                  : userChoice === 'Paper'
+                  ? paper
+                  : scissors
+              }
               alt=""
               className="user-hand"
             />
           </div>
           <div className="choice-computer">
             <img
-              src={`../images/${computerChoice}.png`}
+              src={
+                computerChoice === 'Rock'
+                  ? rock
+                  : computerChoice === 'Paper'
+                  ? paper
+                  : scissors
+              }
               alt=""
               className="computer-hand"
             />
+
           </div>
         </div>
         <div children="button-div">
