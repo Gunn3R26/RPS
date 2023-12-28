@@ -105,11 +105,11 @@ function App() {
           <div className="choice-user">
             <img
               src={
-                userChoice === 'Rock'
-                  ? rock
+                userChoice === 'Scissors'
+                  ? scissors
                   : userChoice === 'Paper'
                   ? paper
-                  : scissors
+                  : rock
               }
               alt=""
               className="user-hand"
@@ -118,11 +118,11 @@ function App() {
           <div className="choice-computer">
             <img
               src={
-                computerChoice === 'Rock'
-                  ? rock
+                computerChoice === 'Scissors'
+                  ? scissors
                   : computerChoice === 'Paper'
                   ? paper
-                  : scissors
+                  : rock
               }
               alt=""
               className="computer-hand"
@@ -160,3 +160,5 @@ function App() {
 }
 
 export default App;
+
+
